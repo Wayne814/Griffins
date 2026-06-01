@@ -1,0 +1,29 @@
+CV - Griffins Kimotho
+
+Personal Information
+Name: Griffins Kimotho
+Email: griffins2k@gmail.com
+Phone: +254700196950
+University: Kirinyaga University
+Year: Second Year Student
+
+About Me
+I am a second year student at Kirinyaga University studying software development and artificial intelligence. I build clean, scalable web applications and enjoy solving problems with modern technologies.
+
+Skills
+- React
+- JavaScript
+- HTML & CSS
+- Tailwind CSS
+- Node.js
+- Python
+- OpenAI integration
+
+Projects
+- Agrotrack: Mobile farming app with crop monitoring and weather updates.
+- EventHub: Event management platform for organizers and ticketing.
+- Ekshop: Local e-commerce platform for students and residents.
+
+Contact
+Email: griffins2k@gmail.com
+Phone: +254700196950
