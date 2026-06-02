@@ -1,16 +1,13 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import heroImg from "../assets/hero.png";
 
 export default function Hero() {
-  const navigate = useNavigate();
-
   const handleReadMore = () => {
     const section = document.getElementById("projects");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate("/projects");
+      window.location.href = "/projects";
     }
   };
 
@@ -41,9 +38,9 @@ export default function Hero() {
         </div>
 
         <div className="hero-buttons">
-          <button type="button" className="button" onClick={() => navigate("/contact")}>
+          <a href="#contact" className="button">
             Hire Me!
-          </button>
+          </a>
           <a href="/Griffins_Kimotho_CV.txt" download className="button outline">
             Download CV
           </a>
