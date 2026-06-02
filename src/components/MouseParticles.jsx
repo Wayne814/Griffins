@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 
 function MouseParticles() {
-  const particlesRef = useRef([]);
   const containerRef = useRef(null);
 
   useEffect(() => {

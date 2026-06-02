@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 const quotes = [
   {
@@ -32,8 +32,7 @@ function getRandomQuote(currentIndex) {
 }
 
 function Quotes() {
-  const initialIndex = useMemo(() => Math.floor(Math.random() * quotes.length), []);
-  const [index, setIndex] = useState(initialIndex);
+  const [index, setIndex] = useState(() => Math.floor(Math.random() * quotes.length));
   const quote = quotes[index];
 
   const handleNewQuote = () => {

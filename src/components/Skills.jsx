@@ -1,3 +1,22 @@
+const skillGroups = [
+  {
+    title: "Languages",
+    items: ["TypeScript", "Lua", "Python", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    title: "Databases",
+    items: ["SQLite", "PostgreSQL", "MongoDB"],
+  },
+  {
+    title: "Tools",
+    items: ["VSCode", "Neovim", "Linux", "Figma", "XFCE", "Arch", "Git", "Font Awesome"],
+  },
+  {
+    title: "Frameworks",
+    items: ["React", "Vue", "Flask", "Express.js", "Jinja", "Discord.js", "Disnake", "REST"],
+  },
+];
+
 export default function Skills() {
   return (
     <section id="skills" className="section">
@@ -7,20 +26,16 @@ export default function Skills() {
       </p>
 
       <div className="skills-grid">
-        <div className="card">
-          <h3>Frontend</h3>
-          <p>React, JavaScript, HTML, CSS, Tailwind, responsive UI, accessible interfaces</p>
-        </div>
-
-        <div className="card">
-          <h3>Backend</h3>
-          <p>Node.js, Express, REST APIs, MySQL/PostgreSQL, performance tuning, deployment</p>
-        </div>
-
-        <div className="card">
-          <h3>Design & AI</h3>
-          <p>Figma, user flows, visual systems, OpenAI, UX research, creative problem solving</p>
-        </div>
+        {skillGroups.map((group) => (
+          <div key={group.title} className="card">
+            <h3>{group.title}</h3>
+            <ul className="skill-list">
+              {group.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -2,6 +2,9 @@ import githubIcon from "../assets/Github.svg";
 import linkedinIcon from "../assets/Linkedin.svg";
 import twitterIcon from "../assets/Twitter.svg";
 import emailIcon from "../assets/Email.svg";
+import dribbleIcon from "../assets/Dribble.svg";
+import figmaIcon from "../assets/Figma.svg";
+import telegramIcon from "../assets/Telegram.svg";
 
 function Footer() {
   return (
@@ -27,6 +30,15 @@ function Footer() {
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-link">
             <img src={twitterIcon} alt="Twitter icon" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Figma" className="social-link">
+            <img src={figmaIcon} alt="Figma icon" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Dribbble" className="social-link">
+            <img src={dribbleIcon} alt="Dribbble icon" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="social-link">
+            <img src={telegramIcon} alt="Telegram icon" />
           </a>
         </div>
       </div>

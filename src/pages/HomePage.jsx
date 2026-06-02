@@ -11,6 +11,17 @@ import Footer from "../components/Footer";
 export default function HomePage() {
   const navigate = useNavigate();
 
+  const navButtons = [
+    { label: "About", route: "/about" },
+    { label: "Skills", route: "/skills" },
+    { label: "Projects", route: "/projects" },
+    { label: "Contact", route: "/contact" },
+  ];
+
+  const handleNavClick = (route) => {
+    navigate(route);
+  };
+
   return (
     <>
       <Navbar />
@@ -34,10 +45,11 @@ export default function HomePage() {
       </main>
       <div className="home-nav-footer">
         <div className="nav-buttons">
-          <button onClick={() => navigate("/about")}>About</button>
-          <button onClick={() => navigate("/skills")}>Skills</button>
-          <button onClick={() => navigate("/projects")}>Projects</button>
-          <button onClick={() => navigate("/contact")}>Contact</button>
+          {navButtons.map((item) => (
+            <button key={item.route} onClick={() => handleNavClick(item.route)}>
+              {item.label}
+            </button>
+          ))}
         </div>
       </div>
       <Footer />
