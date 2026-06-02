@@ -76,7 +76,7 @@ const getTagClass = (tag) => {
   return "";
 };
 
-export default function Projects() {
+export default function Projects({ showCompletedApps = true }) {
   return (
     <Section id="projects" title="Projects">
       <div className="projects-grid">
@@ -96,24 +96,26 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="completed-apps">
-        <h3>Completed Apps</h3>
-        <div className="apps-list">
-          {completedApps.map((app) => (
-            <div key={app.name} className="app-item">
-              <h4>{app.name}</h4>
-              {app.desc && <p className="app-desc">{app.desc}</p>}
-              <div className="app-tags">
-                {app.tags.map((tag) => (
-                  <span key={tag} className={`app-tag ${getTagClass(tag)}`}>
-                    {tag}
-                  </span>
-                ))}
+      {showCompletedApps && (
+        <div className="completed-apps">
+          <h3>Completed Apps</h3>
+          <div className="apps-list">
+            {completedApps.map((app) => (
+              <div key={app.name} className="app-item">
+                <h4>{app.name}</h4>
+                {app.desc && <p className="app-desc">{app.desc}</p>}
+                <div className="app-tags">
+                  {app.tags.map((tag) => (
+                    <span key={tag} className={`app-tag ${getTagClass(tag)}`}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </Section>
   );
 }

@@ -34,7 +34,7 @@ export default function HomePage() {
           <Skills />
         </div>
         <div id="projects" className="page">
-          <Projects />
+          <Projects showCompletedApps={false} />
         </div>
         <div id="contact" className="page">
           <Contact />
