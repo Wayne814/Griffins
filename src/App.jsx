@@ -4,7 +4,7 @@ import PageView from "./pages/PageView";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./components/Projects";
-import Contact from "./pages/Contact";
+import Contact from "./components/Contact";
 import Quotes from "./components/Quotes";
 import "./App.css";
 import Layout from "./components/Layout";
