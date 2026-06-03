@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import Footer from "../components/Footer";
 
 export default function PageView({ component: Component }) {
   const navigate = useNavigate();
@@ -14,7 +13,6 @@ export default function PageView({ component: Component }) {
           Back to Home
         </button>
       </div>
-      <Footer />
     </>
   );
 }

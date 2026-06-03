@@ -33,10 +33,10 @@ export default function Navbar() {
       <div className="navbar-brand">
         <button type="button" className="brand-button" onClick={() => handleNavClick("home")}>
           <img src={logo} alt="Griffins logo" className="brand-logo" />
-          <div>
+          <p className="navbar-brand-name">
             <span>Griffins</span>
             <small>Kimotho</small>
-          </div>
+          </p>
         </button>
       </div>
 
