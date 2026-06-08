@@ -873,6 +873,8 @@ button {
 
 .about-image img {
   width: 100%;
+  max-width: 450px;
+  height: auto;
   display: block;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -886,17 +888,93 @@ button {
   }
 }
 
-.skills-grid,
+/* --- Skills Section Styling --- */
+
+.skills-grid {
+  display: grid;
+  /* Responsive: Minimum 280px width, fills remaining space. 
+     Auto-fit ensures it goes from 1 col (mobile) to 4 cols (desktop) without media queries. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; /* 32px gap between cards */
+  margin-top: 3rem;
+}
+
+.card {
+  /* Matches your existing .card class but ensures consistency */
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.85));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(96, 165, 250, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Ensures all cards in a row are same height */
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow: 0 20px 40px rgba(96, 165, 250, 0.15);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Skill List Styling */
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to next line if too many */
+  gap: 0.75rem;
+  align-content: flex-start;
+}
+
+.skill-list li {
+  background: rgba(96, 165, 250, 0.14); /* Light blue tint */
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 999px; /* Pill shape */
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  transition: all 0.2s ease;
+  cursor: default; /* Not clickable */
+}
+
+.skill-list li:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+/* Mobile specific adjustment if needed */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* Stack vertically on small screens if you prefer */
+    /* OR keep auto-fit for 2 columns on tablets */
+  }
+}
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .project-tags {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 10px;
   margin-top: 18px;
 }
@@ -905,7 +983,7 @@ button {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 20px;
   margin-bottom: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -969,6 +1047,11 @@ button {
   border-color: rgba(168, 85, 247, 0.2);
 }
 
+@media screen and (min-width: 768px) {
+
+  
+}
+
 /* Completed Apps Section */
 .completed-apps {
   margin-top: 80px;
@@ -987,11 +1070,12 @@ button {
 
 .apps-list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
 .app-item {
+  width: 280px;
   background: rgba(17, 24, 39, 0.5);
   border: 1px solid rgba(96, 165, 250, 0.1);
   border-radius: 12px;

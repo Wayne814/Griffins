@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Section } from "./Section";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -11,27 +12,32 @@ export default function Contact() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    setStatus("Sending message...");
+  event.preventDefault();
+  setStatus("Sending message...");
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  try {
+    await emailjs.send(
+      "service_gimj4nr",
+      "template_1xxxb0t",
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+      "pHZUVuawG2abAB7tS"
+    );
 
-      if (!response.ok) {
-        throw new Error("Failed to submit message.");
-      }
-
-      setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error(error);
-      setStatus("Unable to send message. Please try again later.");
-    }
-  };
+    setStatus("Message sent successfully!");
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("Emailjs Error:", error);
+    setStatus(`Error: ${error.text || error.message}`);
+  }
+};
 
   return (
     <Section id="contact" title="Contact">

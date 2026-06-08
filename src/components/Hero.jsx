@@ -3,7 +3,7 @@ import heroImg from "../assets/hero.png";
 
 export default function Hero() {
   const handleReadMore = () => {
-    const section = document.getElementById("projects");
+    const section = document.getElementById("about");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -69,7 +69,7 @@ export default function Hero() {
 
       <footer className="hero-footer">
         <p>Want to see more? Explore the projects section below.</p>
-        <button type="button" onClick={handleReadMore} className="link-button">
+        <button type="button" onClick={handleReadMore} className="link ">
           Read more
         </button>
       </footer>

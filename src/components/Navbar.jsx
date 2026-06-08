@@ -7,12 +7,12 @@ export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const links = ["home", "about", "skills", "projects", "contact"];
+  const links = ["home", "about", "projects", "skills", "contact"];
   const routes = {
     home: "/",
     about: "/about",
-    skills: "/skills",
     projects: "/projects",
+    skills: "/skills",
     contact: "/contact",
   };
 

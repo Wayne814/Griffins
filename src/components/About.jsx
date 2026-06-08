@@ -1,4 +1,4 @@
-import aboutImage from "../assets/Image.png";
+import aboutImage from "../assets/image.png";
 
 export default function About() {
   return (
@@ -7,10 +7,13 @@ export default function About() {
       <div className="about-grid">
         <div className="about-copy">
           <p className="section-description">
-            Hi, I'm Griffins Kimotho — a second-year student at Kirinyaga University focused on AI-powered web experiences and polished UI design.
+            Hi, I'm Griffins Kimotho — a Junior Software Engineer studying at 
+            Kirinyaga University. I engineer intuitive digital products using React, 
+            JavaScript, and modern CSS.
           </p>
           <p>
-            I build intuitive digital products with clean architecture, strong performance, and thoughtful interfaces that feel professional and easy to use.
+            By blending AI-powered web experiences with polished UI design, I focus 
+            on writing performance-driven code to build elegant, easy-to-use interfaces.
           </p>
         </div>
         <div className="about-image">
